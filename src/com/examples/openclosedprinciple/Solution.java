@@ -1,5 +1,6 @@
 package com.examples.openclosedprinciple;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -11,7 +12,8 @@ public class Solution {
 		Product house = new Product("Apple", Size.HUGE, Color.BLUE);
 		
 		BetterFilter bf = new BetterFilter();
-		bf.filter(Arrays.asList(apple, tree, house), new ColorSpecification(Color.GREEN)).forEach(System.out::println);;
+		bf.filter(Arrays.asList(apple, tree, house), new ColorSpecification(Color.GREEN)).forEach(System.out::println);
+		bf.filter(Arrays.asList(apple, tree, house), new AndSpecification(Arrays.asList(new ColorSpecification(Color.BLUE), new SizeSpecification(Size.HUGE)))).forEach(System.out::println);;
 	}
 }
 
@@ -47,6 +49,26 @@ class SizeSpecification implements Specification<Product>{
 	@Override
 	public boolean isSatisfied(Product item) {
 		return item.size == size;
+	}
+	
+}
+
+class AndSpecification implements Specification<Product>{
+	
+	private List<Specification> specifications;
+	
+	AndSpecification(List<Specification> specifications){
+		this.specifications = specifications;
+	}
+	
+	@Override
+	public boolean isSatisfied(Product item) {
+		for(Specification specification: specifications){
+			if(!specification.isSatisfied(item)){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }
