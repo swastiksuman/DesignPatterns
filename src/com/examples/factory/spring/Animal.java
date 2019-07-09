@@ -1,4 +1,4 @@
-package com.examples.singleton.spring;
+package com.examples.factory.spring;
 
 public interface Animal {
 	public void sleep();

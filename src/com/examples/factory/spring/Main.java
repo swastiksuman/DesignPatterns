@@ -1,21 +1,17 @@
-package com.examples.singleton.spring;
+package com.examples.factory.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.examples.factory.spring.AnimalFactory;
-import com.examples.factory.spring.Config;
 
 public class Main {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         ctx.register(Config.class);
         ctx.refresh();
         
-        Employee a = ctx.getBean(Employee.class);
-        a.setName("Swastik");
-        Employee b = ctx.getBean(Employee.class);
-        System.out.println(b.getName());
+        AnimalFactory a = ctx.getBean(AnimalFactory.class);
+        a.getAnimal("Amphibian").sleep();
 	}
 
 }

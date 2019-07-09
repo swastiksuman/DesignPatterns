@@ -1,4 +1,4 @@
-package com.examples.singleton.spring;
+package com.examples.factory.spring;
 
 import org.springframework.stereotype.Component;
 
