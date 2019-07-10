@@ -1,10 +1,10 @@
-package com.examples.factory.spring;
+package com.examples.singleton.spring;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.examples.factory.spring")
+@ComponentScan(basePackages = "com.examples.singleton.spring")
 public class Config {
 
 }

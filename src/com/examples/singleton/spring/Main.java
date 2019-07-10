@@ -2,9 +2,6 @@ package com.examples.singleton.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.examples.factory.spring.AnimalFactory;
-import com.examples.factory.spring.Config;
-
 public class Main {
 
 	public static void main(String[] args) {
