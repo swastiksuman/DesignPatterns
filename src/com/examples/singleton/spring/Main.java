@@ -13,6 +13,8 @@ public class Main {
         a.setName("Swastik");
         Employee b = ctx.getBean(Employee.class);
         System.out.println(b.getName());
+        
+        System.out.println(a == b);
 	}
 
 }
