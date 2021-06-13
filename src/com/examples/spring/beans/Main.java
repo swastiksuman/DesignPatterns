@@ -1,4 +1,4 @@
-package com.examples.singleton.spring;
+package com.examples.spring.beans;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,12 +9,8 @@ public class Main {
         ctx.register(Config.class);
         ctx.refresh();
         
-        var a = ctx.getBean(Employee.class);
-        
-        a.setName("Swastik");
-        Employee b = ctx.getBean(Employee.class);
-        System.out.println(b.getName());
-        System.out.println(a == b);
+        Person a = (Person) ctx.getBean("personwa");
+        System.out.println(a.toString());
 	}
 
 }
