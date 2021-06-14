@@ -9,12 +9,13 @@ public class Main {
         ctx.register(Config.class);
         ctx.refresh();
         
-        var a = ctx.getBean(Employee.class);
+        var a = (Employee)ctx.getBean("employee");
         
         a.setName("Swastik");
         Employee b = ctx.getBean(Employee.class);
         System.out.println(b.getName());
         System.out.println(a == b);
+        ctx.close();
 	}
 
 }

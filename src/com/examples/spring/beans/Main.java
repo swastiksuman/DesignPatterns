@@ -9,8 +9,10 @@ public class Main {
         ctx.register(Config.class);
         ctx.refresh();
         
-        Person a = (Person) ctx.getBean("personwa");
+        Person a = (Person) ctx.getBean(Person.class);
+        Person b = (Person) ctx.getBean("personwa");
         System.out.println(a.toString());
+        System.out.println(b.toString());
 	}
 
 }

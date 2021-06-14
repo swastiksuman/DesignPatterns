@@ -1,6 +1,9 @@
 package com.examples.spring.beans;
 
-public class Person {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Person implements InitializingBean, DisposableBean{
 	
 	private int id;
 	
@@ -44,6 +47,15 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("destroy person");
+	}
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("init person");
+		
 	}
 	
 	
