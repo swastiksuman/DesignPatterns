@@ -18,6 +18,7 @@ public class Main {
         
         Flux<List<Person>> fluxPerson = (Flux<List<Person>>) ctx.getBean("listPerson");
         fluxPerson.subscribe(data -> System.out.println(data.toString()));
+        
 	}
 
 }
