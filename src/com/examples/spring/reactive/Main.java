@@ -16,9 +16,13 @@ public class Main {
         ctx.register(Config.class);
         ctx.refresh();
         
-        Flux<List<Person>> fluxPerson = (Flux<List<Person>>) ctx.getBean("listPerson");
+        Flux<List<Person>> fluxPerson = (Flux<List<Person>>) ctx.getBean("listPerson");  
         fluxPerson.subscribe(data -> System.out.println(data.toString()));
         
+        Flux<List<String>> fluxStrings = (Flux<List<String>>) ctx.getBean("listStrings");
+        fluxStrings.subscribe(data -> System.out.println(data.toString()));
+        
+        System.out.println("END");
 	}
 
 }

@@ -9,7 +9,7 @@ public class Main {
         ctx.register(Config.class);
         ctx.refresh();
         
-        var a = (Employee)ctx.getBean("employee");
+        Employee a = (Employee)ctx.getBean("employee");
         
         a.setName("Swastik");
         Employee b = ctx.getBean(Employee.class);
