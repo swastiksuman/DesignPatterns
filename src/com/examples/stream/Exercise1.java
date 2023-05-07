@@ -30,7 +30,9 @@ public class Exercise1 {
         	.flatMap(id -> StreamSources.userStream().filter(user -> user.getId() == id))
         	.map(user->user.getFirstName())
         	.forEach(System.out::println);
-
+        
+        StreamSources.userStream().filter(user->StreamSources.intNumbersStream().anyMatch(i->i==user.getId()))
+        	.forEach(System.out::println);
     }
 
 }
