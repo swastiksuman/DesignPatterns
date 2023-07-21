@@ -1,6 +1,6 @@
 package com.examples.stream;
 
-public class Exercise1 {
+public class Excercise1 {
 
     public static void main(String[] args) {
 
