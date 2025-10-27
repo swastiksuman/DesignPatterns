@@ -8,11 +8,16 @@ public class Excercise2 {
 
         // Use ReactiveSources.intNumbersFlux() and ReactiveSources.userFlux()
         // Print all numbers in the ReactiveSources.intNumbersFlux stream
-    	ReactiveSources.intNumbersFlux().subscribe(System.out::println);
-    	//Thread.sleep(5000);
+    	//ReactiveSources.intNumbersFlux().subscribe(System.out::println);
+    	Thread.sleep(5000);
         // Print all users in the ReactiveSources.userFlux stream
-    	ReactiveSources.userFlux().subscribe(System.out::println);
-
+    	//ReactiveSources.userFlux().subscribe(System.out::println);
+    	
+    	
+    	ReactiveSources.intNumbersFlux().toStream().forEach(num ->{
+    		System.out.println(num);
+    	});
+    	
         System.out.println("Press a key to end");
         System.in.read();
     }
