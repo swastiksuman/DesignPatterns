@@ -52,4 +52,10 @@ public class ReactiveSources {
 	public static Flux<Integer> intNumbersFluxWithRepeat() {
 		return Flux.just(1, 2, 1, 1, 3, 2, 4, 5, 1).delayElements(Duration.ofSeconds(1));
 	}
+	
+	public static Mono<User> newUserfFlux() {
+		return Mono
+				.just(new User(1, "David", "Beckham"))
+				;
+	}
 }

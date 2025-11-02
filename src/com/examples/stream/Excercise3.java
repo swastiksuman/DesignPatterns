@@ -24,9 +24,10 @@ public class Excercise3 {
 		});
 		// Observer 2 - process immediately
 		flux.subscribe(i -> System.out.println("Observer-2 : " + i));
+		flux.blockLast(); // block until the flux completes
 
 		System.out.println("Ends");
-		System.in.read();
+		//System.in.read();
 	}
 
 }
