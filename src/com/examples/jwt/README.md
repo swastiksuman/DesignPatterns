@@ -2,6 +2,7 @@
 
 Start here:
 - Read `JWT_GUIDE.md`
+- Read `JWT_LOGIN_FLOW.md`
 - Run `JwtConceptsMain`
 - Then run `JwtPitfallsMain`
 - Finally run `JwtAuthFlowMain`
